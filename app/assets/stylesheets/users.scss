@@ -1,0 +1,42 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mypage {
+  text-align: center;
+  margin: 5px;
+}
+
+#omikuji {
+  border: red 2px solid;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  margin: 5px auto;
+  line-height: 130px;
+}
+
+.me {
+  color: #444;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.me:before, .me:after {
+  content: "";
+  flex-grow: 1;
+  border-top: 4px dotted #444;
+  display: block;
+}
+
+.me:before {
+  margin-right: 4em;
+}
+.me:after {
+  margin-left: 4em;
+}
+
+.toedit {
+  text-align: center;
+}

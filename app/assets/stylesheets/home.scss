@@ -1,0 +1,41 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index {
+  text-align: center;
+}
+
+.container {
+  margin-bottom: 220px;
+}
+
+.topic{
+  margin:2em 0;
+  position: relative;
+  padding: 0.25em 1em;
+  border: solid 2px #ffcb8a;
+  border-radius: 3px 0 3px 0;
+}
+.topic:before,.topic:after
+{
+  content: '';
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border: solid 2px #ffcb8a;
+  border-radius: 50%;
+}
+.topic:after {
+  top:-12px;
+  left:-12px;
+}
+.topic:before {
+  bottom:-12px;
+  right:-12px;
+}
+.topic p {
+  margin: 0; 
+  padding: 0;
+}
+

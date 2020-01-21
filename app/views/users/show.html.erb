@@ -1,0 +1,29 @@
+<div class="mypage">
+  <h1 class="me">マイページ</h1>
+  あなたの名前:<%= @current_user.name %>
+  <br>
+  <br>
+  <p>今日の運勢は...</p>
+  <div id="omikuji" style="display:none;"></div>
+  <br>
+  <input type="button" value="おみくじ" onClick="omikuji()">
+</div>
+
+<script type="text/javascript">          
+function omikuji() {
+  omikuji = document.getElementById('omikuji');
+	rand = Math.floor(Math.random()*100);
+	msg = "大吉"; //0～9（10%）
+	if (rand > 9) msg = "中吉"; //10～29（20%）
+	if (rand > 29) msg = "吉"; //30～69（40%）
+	if (rand > 69) msg = "凶"; //70～89（20%）
+	if (rand > 89) msg = "大凶"; //90～99（10%）
+  omikuji.textContent = msg;
+  $('#omikuji').fadeIn(4600);
+}
+</script>
+
+<br><br><br>
+<div class="toedit">
+  <%= link_to("アカウント編集", "/users/#{@current_user.id}/edit", class: 'btn btn-outline-success bg-dark my-2 my-sm-0') %>
+</div>

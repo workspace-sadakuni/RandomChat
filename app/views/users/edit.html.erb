@@ -1,0 +1,24 @@
+<%= render 'shared/error_messages' %>
+
+
+
+<%= form_with model: @current_user do |f| %>
+  <div class="form-group">
+    <%= f.label :name, 'ユーザー名' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, 'パスワード' %>
+    <%= f.password_field :password, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation, 'パスワード（確認）' %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+
+  <%= f.submit '編集', class: 'btn btn-primary' %>
+<% end %>
+<br>
+<div class="todelete">
+  <%= link_to("アカウント削除", "/users/#{@current_user.id}", class: 'btn btn-outline-success bg-dark my-2 my-sm-0', method: :delete) %>
+</div>

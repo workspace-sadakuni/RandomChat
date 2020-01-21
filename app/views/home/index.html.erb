@@ -1,0 +1,80 @@
+<div class="index">
+  <div class="container">
+    <br><br><br><br><br><br><br><br>
+    <div class="quotes" style="display:none;">
+    <%= @quotes.sample %><br>
+    </div>
+
+    <script>
+      $('.quotes').fadeIn(5000);
+    </script>
+  </div>
+  <br>
+
+  <div class="about">
+    <h2>RandomChatとは</h2><br>
+    <p>RandomChatは話題を決めるボタン押すことで、あなたの投稿したい話題を提案します。自由に投稿したり、他の人の投稿にコメントしよう！<br><br>ユーザー登録をすると、マイページから今日の運勢を占えるよ！</p>
+  </div>
+
+  <div class="topic">
+    <br>
+    <h5>さっそく下の「話題を決める」ボタンをおしてみよう！</h5>
+    <br>
+    <br>
+    <br>
+
+    <div id="output">
+      <p id="color"></p>
+      <br>
+      <p id="spot"></p>
+      <br>
+      <p id="food"></p>
+      <br><br>
+    </div>
+    <div class="btn btn-outline-success my-2 my-sm-0">
+      <p id="btn" onclick="gtag('event', 'click', {'event_category': '開発'});">話題を決める</p>
+    </div>
+    <br><br>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var btn = document.getElementById('btn');
+  var output = document.getElementById('output');
+  var overlay = document.getElementById('overlay');
+ 
+ btn.addEventListener('click', function() {
+  result();
+  overlay.classList.add('fadein');
+  output.classList.add('fadein');
+  });
+ 
+ overlay.addEventListener('click', function() {
+  output.classList.remove('fadein');
+  overlay.classList.remove('fadein');
+  });
+  function result() {
+
+ //＊カラー
+  var color = document.getElementById('color');
+  var colornum = new Array('青色','緑色','黄色','赤色','ピンク色','オレンジ色','紫色','白色','黒色','茶色','紺色');
+  var num = Math.floor(Math.random() * colornum.length);
+  console.log(num);
+  color.innerHTML = 'カラー : ' + colornum[num];
+ 
+ //＊スポット
+  var spot = document.getElementById('spot');
+  var spotnum = new Array('東京','沖縄','一度行ってみたいところ','大阪','神戸','北海道','名古屋','韓国','台湾','フィリピン','マレーシア','中国','カナダ','アメリカ','イギリス','イタリア','スペイン','ドイツ','オーストラリア','ブラジル');
+  var num = Math.floor(Math.random() * spotnum.length);
+  spot.innerHTML = 'スポット : ' + spotnum[num];
+ 
+ //＊ひとこと
+  var food = document.getElementById('food');
+  var foodnum = new Array('カレー','ハンバーグ','一番お気に入りの自分のモノは？','ラーメン','焼肉','ビール','ワイン','焼酎','パン','お菓子','おすすめの居酒屋','好きなお母さんの料理','嫌いな食べ物','好きな異性のタイプ','好きなゲーム','休みの日何してる？','好きな音楽','好きなYouTuber');
+  var num = Math.floor(Math.random() * foodnum.length);
+  food.innerHTML = '趣味など : ' + foodnum[num];
+  }
+ })();
+</script>
